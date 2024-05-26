@@ -15,13 +15,16 @@ import Tickets from '../screens/Tickets';
 import Wallet from '../screens/Wallet';
 import Account from '../screens/Account';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import tw from 'twrnc';
 import Home from '../screens/Home';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 const Tab = createBottomTabNavigator();
 
 const TabScreen = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
   return (
     <Tab.Navigator
       initialRouteName={dashboardRouteStack.Home}
@@ -99,10 +102,13 @@ const TabScreen = () => {
           headerShown: false,
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarButton: () => (
-            <View
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(dashboardRouteStack.Home);
+              }}
               style={tw`bg-[${colors.primaryLight}] w-18 h-8 rounded-full items-center justify-center`}>
               <Icon size={30} name="add" color={colors.white} />
-            </View>
+            </TouchableOpacity>
           ),
         })}
       />

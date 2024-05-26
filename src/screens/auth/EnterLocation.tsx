@@ -62,9 +62,11 @@ const EnterLocation = () => {
             onPress={(data, details: any = null) => {
               dispatch(
                 setUser({
-                  latitude: details.geometry.location.lat,
-                  longitude: details.geometry.location.lng,
-                  description: data.description,
+                  destination: {
+                    latitude: details.geometry.location.lat,
+                    longitude: details.geometry.location.lng,
+                    description: data.description,
+                  },
                 }),
               );
             }}

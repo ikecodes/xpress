@@ -7,7 +7,6 @@ import AuthRoute from './Auth.routes';
 import {colors} from '../theme/colors';
 export function Navigation() {
   const user = useSelector((state: any) => state.user);
-  console.log(user);
   return (
     <View style={tw`flex-1`}>
       <StatusBar barStyle={'dark-content'} backgroundColor={colors.white} />

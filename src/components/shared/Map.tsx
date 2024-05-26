@@ -43,7 +43,7 @@ const Map = () => {
             latitude: destination?.latitude,
             longitude: destination?.longitude,
           }}
-          apikey={Config.GOOGLE_MAPS_API_KEY}
+          apikey={`${Config.GOOGLE_MAPS_API_KEY}`}
           strokeWidth={3}
           strokeColor={colors.primaryBase}
           mode="DRIVING"

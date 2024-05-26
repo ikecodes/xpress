@@ -53,8 +53,8 @@ const PrimaryButton: React.FC<Props> = ({
         {
           backgroundColor: outline
             ? color
-            : isDisabled && !bgColor
-            ? colors.primaryLight
+            : isDisabled || !bgColor
+            ? colors.grayPrimary
             : bgColor
             ? bgColor
             : colors.primaryLight,
@@ -85,7 +85,11 @@ const PrimaryButton: React.FC<Props> = ({
             style={[
               tw`text-center text-[${colors.white}]`,
               {
-                color: outline ? outlineColor ?? colors.primaryLight : color,
+                color: outline
+                  ? outlineColor ?? colors.primaryLight
+                  : isDisabled
+                  ? '#1D1B20'
+                  : color,
               },
               textStyle,
             ]}>
