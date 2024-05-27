@@ -15,7 +15,7 @@ import Tickets from '../screens/Tickets';
 import Wallet from '../screens/Wallet';
 import Account from '../screens/Account';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import tw from 'twrnc';
 import Home from '../screens/Home';
 import {useNavigation} from '@react-navigation/native';
