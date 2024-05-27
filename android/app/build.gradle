@@ -90,6 +90,12 @@ android {
         versionName "1.0"
     }
     signingConfigs {
+        release {
+            storeFile file('xpresso.keystore')
+            storePassword 'xpresso'
+            keyAlias 'xpresso'
+            keyPassword 'xpresso'
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'

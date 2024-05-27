@@ -9,7 +9,7 @@ import Notifications from '../assets/icons/notification.svg';
 import Signout from '../assets/icons/signout.svg';
 import {colors} from '../theme/colors';
 import {useDispatch} from 'react-redux';
-import {setUser} from '../slices/userSlice';
+import {fullLogOut} from '../slices/userSlice';
 import MIcon from 'react-native-vector-icons/MaterialIcons';
 
 const Account = () => {
@@ -40,7 +40,7 @@ const Account = () => {
       icon: <Signout height={size} width={size} />,
       name: 'Signout',
       onPress: () => {
-        dispatch(setUser({isLoggedIn: false}));
+        dispatch(fullLogOut());
       },
     },
   ];
@@ -52,6 +52,7 @@ const Account = () => {
           return (
             <Pressable
               key={i}
+              onPress={type.onPress}
               style={tw`flex-row items-center justify-between border-b-[0.5px] py-5 px-5  border-[${colors.primaryLight}]`}>
               <View style={tw`flex-row gap-3`}>
                 <View>{type.icon}</View>
